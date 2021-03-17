@@ -1,0 +1,34 @@
+﻿@model List<Entity.Book>
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<br />
+<h2>@ViewBag.send</h2>
+<br />
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Page</th>
+            <th>Date</th>
+            <th>GenreId</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ID</td>
+                <td>@x.Name</td>
+                <td>@x.Author</td>
+                <td>@x.Page</td>
+                <td>@x.Date</td>
+                <td>@x.Genre.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

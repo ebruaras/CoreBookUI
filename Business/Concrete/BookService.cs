@@ -122,5 +122,21 @@ namespace Business
                 return bk;
             }
         }
+        public List<Book> Detail(int id)
+        {
+            using (BookContext db = new BookContext(config))
+            {
+               var list= db.Books.Include(x => x.Genre).Where(x => x.GenreID == id).ToList();
+                return list;
+            }
+        }
+        public String Edit(int id)
+        {
+            using (BookContext db = new BookContext(config))
+            {
+               var deger= db.Genres.Where(x => x.ID == id).Select(y => y.Name).FirstOrDefault();
+                return deger;
+            }
+        }
     }
 }

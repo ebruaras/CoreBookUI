@@ -13,6 +13,7 @@
             <th>Name</th>
             <th>Update</th>
             <th>Delete</th>
+            <th>Details</th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +24,7 @@
                     <td>@x.Name</td>
                     <td><a href="/Genre/GetById/@x.ID" class="btn btn-success">Update</a></td>
                     <td><a href="/Genre/Delete/@x.ID" class="btn btn-danger">Delete</a></td>
+                    <td><a href="/Genre/Detail/@x.ID" class="btn btn-outline-primary" style="background-color:#ffffff"  >Details</a></td>
 
                 </tr>
             }

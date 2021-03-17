@@ -46,5 +46,12 @@ namespace CoreBookUI.Controllers
             _bookService.Update(g);
             return RedirectToAction("Index");
         }
+        public IActionResult Detail(int id)
+        {
+            var d=  _bookService.Edit(id);
+            ViewBag.send = d;
+            var dgr= _bookService.Detail(id);
+            return View(dgr);
+        }
     }
 }

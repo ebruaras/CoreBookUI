@@ -15,7 +15,7 @@
     @Html.TextBoxFor(x => x.Page, new { @class = "form-control" })
     <br />
     <b>Date</b>
-    @Html.TextBoxFor(x => x.Date, new { @type = "date" })
+    @Html.TextBoxFor(x => x.Date, "{0:d MMM yyyy}", new { @class = "form-control" })
     <br />
     <b>Genre</b>
     @Html.DropDownListFor(x=>x.Genre.ID,(List<SelectListItem>)ViewBag.s, new { @class="form-control"})

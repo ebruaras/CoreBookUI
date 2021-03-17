@@ -19,5 +19,7 @@ namespace Business.Abstract
         void DeleteBook(int id);
         Book GetByIdBook(int id);
         Book UpdateBook(Book b);
+        List<Book> Detail(int id);
+        String Edit(int id);
     }
 }
