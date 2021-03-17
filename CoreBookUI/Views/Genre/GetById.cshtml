@@ -1,0 +1,17 @@
+﻿@model Entity.Genre
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "Genre", FormMethod.Post))
+{
+    <b>Genre ID</b>
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    <b>Genre</b>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info" style="background-color:#c64343">Update</button>
+}
+

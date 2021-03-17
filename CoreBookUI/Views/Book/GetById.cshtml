@@ -1,0 +1,32 @@
+﻿@model Entity.Book
+@{
+    ViewData["Title"] = "GetById";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "Book", FormMethod.Post))
+{
+    <b>Book ID</b>
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    <b>Book name</b>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    <b>Author</b>
+    @Html.TextBoxFor(x => x.Author, new { @class = "form-control" })
+    <br />
+    <b>Date</b>
+    @Html.TextBoxFor(x => x.Date, new { @type = "date",@class="form-control" })
+    <br />
+    <b>Page</b>
+    @Html.TextBoxFor(x => x.Page, new { @class = "form-control" })
+    <br />
+    <b>Genre</b>
+    @Html.DropDownListFor(x => x.Genre.ID, (List<SelectListItem>)ViewBag.s, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info" style="background-color:#c64343">Update</button>
+}
+
+
+

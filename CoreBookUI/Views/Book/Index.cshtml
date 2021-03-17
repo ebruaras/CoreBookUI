@@ -1,0 +1,39 @@
+﻿@model List<Entity.Book>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<h2>Books</h2>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Page</th>
+            <th>Date</th>
+            <th>GenreId</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ID</td>
+                <td>@x.Name</td>
+                <td>@x.Author</td>
+                <td>@x.Page</td>
+                <td>@x.Date</td>
+                <td>@x.Genre.Name</td>
+                <td><a href="/Book/GetById/@x.ID" class="btn btn-success">Update</a></td>
+                <td><a href="/Book/Delete/@x.ID" class="btn btn-danger">Delete</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Book/NewBook/" class="btn btn-primary">New Book</a>

@@ -1,0 +1,26 @@
+﻿@model Entity.Book
+@{
+    ViewData["Title"] = "NewBook";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <b>Book name</b>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    <b>Author</b>
+    @Html.TextBoxFor(x => x.Author, new { @class = "form-control" })
+    <br />
+    <b>Number of page</b>
+    @Html.TextBoxFor(x => x.Page, new { @class = "form-control" })
+    <br />
+    <b>Date</b>
+    @Html.TextBoxFor(x => x.Date, new { @type = "date" })
+    <br />
+    <b>Genre</b>
+    @Html.DropDownListFor(x=>x.Genre.ID,(List<SelectListItem>)ViewBag.s, new { @class="form-control"})
+    <br />
+    <button class="btn btn-info">Add</button>
+</form>
+
+

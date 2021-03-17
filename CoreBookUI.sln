@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreBookUI", "CoreBookUI\CoreBookUI.csproj", "{8641C911-E30B-4A45-878D-6439067F9C59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{2042E56B-B75D-4636-AFAB-23EF33453F8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{F15AEC30-BB14-4EAB-9A39-8FC091D0DA6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8641C911-E30B-4A45-878D-6439067F9C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8641C911-E30B-4A45-878D-6439067F9C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8641C911-E30B-4A45-878D-6439067F9C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8641C911-E30B-4A45-878D-6439067F9C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2042E56B-B75D-4636-AFAB-23EF33453F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2042E56B-B75D-4636-AFAB-23EF33453F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2042E56B-B75D-4636-AFAB-23EF33453F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2042E56B-B75D-4636-AFAB-23EF33453F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F15AEC30-BB14-4EAB-9A39-8FC091D0DA6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F15AEC30-BB14-4EAB-9A39-8FC091D0DA6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F15AEC30-BB14-4EAB-9A39-8FC091D0DA6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F15AEC30-BB14-4EAB-9A39-8FC091D0DA6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7331056-0092-4F6A-B2ED-A21AE1751905}
+	EndGlobalSection
+EndGlobal

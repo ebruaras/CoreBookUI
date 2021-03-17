@@ -1,0 +1,13 @@
+﻿@model Entity.Genre
+@{
+    ViewData["Title"] = "NewGenre";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <b>Genre</b>
+    @Html.TextBoxFor(x=>x.Name, new { @class="form-control"})
+    <br />
+    <button class="btn btn-info">Add</button>
+</form>
+
