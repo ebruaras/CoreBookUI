@@ -17,7 +17,7 @@ namespace CoreBookUI.Controllers
         }
         public IActionResult Index()
         {
-            List<Genre> getGenre =_bookService.GetAllGenre();
+            List<Genre> getGenre = _bookService.GetAllGenre();
             return View(getGenre);
         }
         [HttpGet]
@@ -38,7 +38,7 @@ namespace CoreBookUI.Controllers
         }
         public IActionResult GetById(int id)
         {
-           var deger= _bookService.GetById(id);
+            var deger = _bookService.GetById(id);
             return View(deger);
         }
         public IActionResult Update(Genre g)
@@ -48,9 +48,9 @@ namespace CoreBookUI.Controllers
         }
         public IActionResult Detail(int id)
         {
-            var d=  _bookService.Edit(id);
+            var d = _bookService.Edit(id);
             ViewBag.send = d;
-            var dgr= _bookService.Detail(id);
+            var dgr = _bookService.Detail(id);
             return View(dgr);
         }
     }

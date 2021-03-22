@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -16,6 +17,7 @@ namespace CoreBookUI.Controllers
         {
             this._bookService = _bookService;
         }
+        [Authorize]
         public IActionResult Index()
         {
             var books = _bookService.GetAllBook().ToList();
@@ -24,7 +26,7 @@ namespace CoreBookUI.Controllers
         [HttpGet]
         public IActionResult NewBook()
         {
-           List<SelectListItem> dgr= _bookService.AddBook();
+            List<SelectListItem> dgr = _bookService.AddBook();
             ViewBag.s = dgr;
             return View();
         }

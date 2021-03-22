@@ -1,4 +1,5 @@
 ﻿using Entity;
+using Entity.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace Business.Abstract
 {
-   public interface IBookService
+    public interface IBookService
     {
         List<Genre> GetAllGenre();
         void Add(Genre g);
@@ -21,5 +22,6 @@ namespace Business.Abstract
         Book UpdateBook(Book b);
         List<Book> Detail(int id);
         String Edit(int id);
+        Admin Login(Admin a);
     }
 }

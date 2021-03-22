@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Entity;
 using Entity.Context;
+using Entity.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -11,7 +12,7 @@ using System.Text;
 
 namespace Business
 {
-   public class BookService: IBookService
+    public class BookService : IBookService
     {
         public IConfiguration config { get; set; }
         public BookService(IConfiguration iConfig)
@@ -20,7 +21,7 @@ namespace Business
         }
         public List<Genre> GetAllGenre()
         {
-            using(BookContext db=new BookContext(config))
+            using (BookContext db = new BookContext(config))
             {
                 return db.Genres.ToList();
             }
@@ -37,7 +38,7 @@ namespace Business
         {
             using (BookContext db = new BookContext(config))
             {
-               var dlt= db.Genres.Find(id);
+                var dlt = db.Genres.Find(id);
                 db.Remove(dlt);
                 db.SaveChanges();
             }
@@ -64,22 +65,23 @@ namespace Business
         {
             using (BookContext db = new BookContext(config))
             {
-                return db.Books.Include(x=>x.Genre).ToList();
+                return db.Books.Include(x => x.Genre).ToList();
             }
         }
         public List<SelectListItem> AddBook()
         {
-            using (BookContext db = new BookContext(config)) {
+            using (BookContext db = new BookContext(config))
+            {
                 List<SelectListItem> deger = (from x in db.Genres.ToList()
-                                             select new SelectListItem
-                                             {
-                                                 Text = x.Name,
-                                                 Value = x.ID.ToString()
-                                             }).ToList();
+                                              select new SelectListItem
+                                              {
+                                                  Text = x.Name,
+                                                  Value = x.ID.ToString()
+                                              }).ToList();
                 return deger;
-                                           
-                    }
-           
+
+            }
+
         }
         public void AddBook(Book b)
         {
@@ -126,7 +128,7 @@ namespace Business
         {
             using (BookContext db = new BookContext(config))
             {
-               var list= db.Books.Include(x => x.Genre).Where(x => x.GenreID == id).ToList();
+                var list = db.Books.Include(x => x.Genre).Where(x => x.GenreID == id).ToList();
                 return list;
             }
         }
@@ -134,8 +136,16 @@ namespace Business
         {
             using (BookContext db = new BookContext(config))
             {
-               var deger= db.Genres.Where(x => x.ID == id).Select(y => y.Name).FirstOrDefault();
+                var deger = db.Genres.Where(x => x.ID == id).Select(y => y.Name).FirstOrDefault();
                 return deger;
+            }
+        }
+        public Admin Login(Admin a)
+        {
+            using (BookContext db = new BookContext(config))
+            {
+                var info = db.Admins.FirstOrDefault(x => x.Username == a.Username && x.Password == a.Password);
+                return info;
             }
         }
     }
